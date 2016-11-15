@@ -3,7 +3,6 @@ package com.dwitech.eap.skyscanner.adaptor.entity;
 import java.time.LocalDateTime;
 
 public class InOutBoundLeg {
-
   private String carrier;
   private String origin;
   private String destination;

@@ -7,7 +7,6 @@ import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
 public class Airport {
-
 	@SerializedName("iata") @Expose private String iata;
 	@SerializedName("lon") @Expose private String lon;
 	@SerializedName("iso") @Expose private String iso;

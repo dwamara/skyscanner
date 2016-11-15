@@ -3,7 +3,6 @@ package com.dwitech.eap.skyscanner.adaptor.entity;
 import java.time.LocalDate;
 
 public class CheapestQuotesRequest {
-
   private String country;
   private String city;
   private String currency;
@@ -42,14 +41,10 @@ public class CheapestQuotesRequest {
   public LocalDate getOutboundPartialDate() {
     return outboundPartialDate;
   }
-  public void setOutboundPartialDate(final LocalDate outboundPartialDate) {
-    this.outboundPartialDate = outboundPartialDate;
-  }
+  public void setOutboundPartialDate(final LocalDate outboundPartialDate) { this.outboundPartialDate = outboundPartialDate; }
 
   public LocalDate getInboundPartialDate() {
     return inboundPartialDate;
   }
-  public void setInboundPartialDate(final LocalDate inboundPartialDate) {
-    this.inboundPartialDate = inboundPartialDate;
-  }
+  public void setInboundPartialDate(final LocalDate inboundPartialDate) { this.inboundPartialDate = inboundPartialDate; }
 }

@@ -10,7 +10,6 @@ import java.util.List;
 
 @Generated("org.jsonschema2pojo")
 public class Currencies {
-
 	@SerializedName("Currencies") @Expose private List<Currency> currencies = new ArrayList<>();
 
 	public List<Currency> getCurrencies() {

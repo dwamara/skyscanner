@@ -7,7 +7,6 @@ import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
 public class Locale {
-
 	@SerializedName("Code") @Expose private String code;
 	@SerializedName("Name") @Expose private String name;
 

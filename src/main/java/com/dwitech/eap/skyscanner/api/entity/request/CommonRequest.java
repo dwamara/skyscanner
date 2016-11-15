@@ -6,9 +6,9 @@ public class CommonRequest {
 	protected String currency;
 	protected String locale;
 	protected String originPlace;
-	private String destinationPlace;
-	private String outboundPartialDate;
-	private String inboundPartialDate;
+	protected String destinationPlace;
+	protected String outboundPartialDate;
+	protected String inboundPartialDate;
 
 	public String getMarket() {
 		return market;

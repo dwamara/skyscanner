@@ -1,10 +1,6 @@
 package com.dwitech.eap.skyscanner.api.entity.response;
 
-import com.dwitech.eap.skyscanner.api.entity.commons.Carrier;
-import com.dwitech.eap.skyscanner.api.entity.commons.Currency;
-import com.dwitech.eap.skyscanner.api.entity.commons.Place;
-import com.dwitech.eap.skyscanner.api.entity.commons.Quote;
-import com.dwitech.eap.skyscanner.api.entity.commons.Dates;
+import com.dwitech.eap.skyscanner.api.entity.commons.*;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

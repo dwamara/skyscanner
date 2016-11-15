@@ -9,7 +9,6 @@ import java.util.List;
 
 @Generated("org.jsonschema2pojo")
 public class OutboundDate {
-
 	@SerializedName("PartialDate") @Expose private String partialDate;
 	@SerializedName("QuoteIds") @Expose private List<Integer> quoteIds = new ArrayList<>();
 	@SerializedName("Price") @Expose private Double price;

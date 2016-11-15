@@ -8,6 +8,7 @@ import com.dwitech.eap.skyscanner.api.entity.commons.Leg;
 import com.dwitech.eap.skyscanner.api.entity.commons.Place;
 import com.dwitech.eap.skyscanner.api.entity.commons.Quote;
 import com.dwitech.eap.skyscanner.api.entity.response.BrowseQuotesResponse;
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,6 @@ public class ObjectFactory {
 		final SkyscannerQuote quote = new SkyscannerQuote();
 		quote.setDirect(q.getDirect());
 		quote.setPrice(q.getMinPrice());
-
 		quote.setInboundLeg(createInOutBoundLeg(response, q.getInboundLeg()));
 		quote.setOutboundLeg(createInOutBoundLeg(response, q.getOutboundLeg()));
 		return quote;
@@ -43,27 +43,25 @@ public class ObjectFactory {
 
 	private InOutBoundLeg createInOutBoundLeg(final BrowseQuotesResponse response, final Leg inoutLeg) {
 		final InOutBoundLeg leg = new InOutBoundLeg();
-
 		leg.setDepartureDate(parse(inoutLeg.getDepartureDate()));
 
 		final List<Integer> carrierIds = inoutLeg.getCarrierIds();
-		if (carrierIds != null && !carrierIds.isEmpty()) {
+		if (CollectionUtils.isNotEmpty(carrierIds)) {
 			leg.setCarrier(carrierLookUp(response.getCarriers(), carrierIds.get(0)));
 		}
+
 		leg.setOrigin(placeLookUp(response.getPlaces(), inoutLeg.getOriginId()));
 		leg.setDestination(placeLookUp(response.getPlaces(), inoutLeg.getDestinationId()));
 		return leg;
 	}
 
 	private String placeLookUp(final List<Place> places, final int placeId) {
-		final Map<Integer, String> placesMap =
-				places.stream().collect(toMap(Place::getPlaceId, Place::getName));
+		final Map<Integer, String> placesMap = places.stream().collect(toMap(Place::getPlaceId, Place::getName));
 		return placesMap.get(placeId);
 	}
 
 	private String carrierLookUp(final List<Carrier> carriers, final int carrierId) {
-		final Map<Integer, String> carriersMap =
-				carriers.stream().collect(toMap(Carrier::getCarrierId, Carrier::getName));
+		final Map<Integer, String> carriersMap = carriers.stream().collect(toMap(Carrier::getCarrierId, Carrier::getName));
 		return carriersMap.get(carrierId);
 	}
 
